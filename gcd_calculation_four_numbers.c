@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main() {
+    int a, b, c, d, x;
+    
+    // Input four numbers
+    printf("Enter four numbers: ");
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    
+    // Find the minimum of the four numbers
+    x = (a < b) ? ((a < c) ? ((a < d) ? a : d) : ((c < d) ? c : d)) : ((b < c) ? ((b < d) ? b : d) : ((c < d) ? c : d));
+    
+    // Loop to find the GCD
+    while (1) {
+        if (a % x == 0 && b % x == 0 && c % x == 0 && d % x == 0) {
+            printf("GCD = %d", x);
+            break;
+        } else {
+            x--;
+        }
+    }
+    
+    return 0; 
+}
